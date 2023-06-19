@@ -1,6 +1,7 @@
 import React from "react";
 import headTitle from "../Icons/Head-Title.webp"
 import headTitleLight from "../Icons/Head-Title-Light.webp"
+import hamburgerBg from "../Backgrounds/hamburgerNavBg.jpg"
 import addDemo from "../Icons/googleAddDemo.jpg"
 import { Link } from 'react-router-dom';
 
@@ -81,24 +82,18 @@ export function Navbar(){
                 </div>
             </header>
 
-            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <div class="hamburgerImage offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">   
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <div class="offcanvas-header d-flex justify-content-center mt-5">
+                    <h5 class="offcanvas-title mt-5" id="offcanvasExampleLabel" style={{fontSize:"3rem", color:"white"}}>Sign In</h5>
                 </div>
 
-                <div class="offcanvas-body">
-                    <div>
-                        Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
-                    </div>
-                    <div class="dropdown mt-3">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                            Dropdown button
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <div class="offcanvas-body mt-5">
+                    <div className="">
+                        <ul style={{listStyle:"none"}}>
+                            <li className="my-3" style={{fontSize:"2rem", color:"white"}}>Blog</li>
+                            <li className="my-3" style={{fontSize:"2rem", color:"white"}}>Forum</li>
+                            <li className="my-3" style={{fontSize:"2rem", color:"white"}}>Buy Now!</li>
                         </ul>
                     </div>
                 </div>
