@@ -1,5 +1,9 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
 
+footer{
+  color: white;
+  background-image: url("./Backgrounds/footerBg.jpg");
+}
 
 @media screen and (max-width:768px) {
   .header1, .header2, .header3{
@@ -9,5 +13,19 @@
     display: flex !important;
     justify-content: space-around;
     align-items: center;
+  }
+
+  .footer1{
+    display: block !important;
+  }
+
+  .footer2{
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .footer-list1, .footer-list2{
+    margin-top: 2rem;
   }
 }
