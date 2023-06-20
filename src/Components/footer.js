@@ -12,15 +12,15 @@ export function Footer(){
                         <h5>EDITOR PICKS</h5>
                         <ul className="p-0">
                             <li className="list-group-item my-3" style={{maxWidth:"27rem"}}>
-                                <LeftImageRightText imgSize={"6rem"} textSize={"1rem"} leftImage={footerDemo} rightText={"Discover the Most Magical Sunset in Santorini"}/>
+                                <LeftImageRightText imgSize={"6rem"} textSize={"1rem"} leftImage={footerDemo} rightText={"Discover the Most Magical Sunset in Santorini"} author={""} date={""}/>
                             </li>
 
                             <li className="list-group-item my-3" style={{maxWidth:"27rem"}}>
-                                <LeftImageRightText imgSize={"6rem"} textSize={"1rem"} leftImage={footerDemo} rightText={"Discover the Most Magical Sunset in Santorini"}/>
+                                <LeftImageRightText imgSize={"6rem"} textSize={"1rem"} leftImage={footerDemo} rightText={"Discover the Most Magical Sunset in Santorini"} author={""} date={""}/>
                             </li>
 
                             <li className="list-group-item my-3" style={{maxWidth:"27rem"}}>
-                                <LeftImageRightText imgSize={"6rem"} textSize={"1rem"} leftImage={footerDemo} rightText={"Discover the Most Magical Sunset in Santorini"}/>
+                                <LeftImageRightText imgSize={"6rem"} textSize={"1rem"} leftImage={footerDemo} rightText={"Discover the Most Magical Sunset in Santorini"} author={""} date={""}/>
                             </li>
                         </ul>
                     </li>
@@ -29,15 +29,15 @@ export function Footer(){
                         <h5>POPULAR POSTS</h5>
                         <ul className="p-0">
                             <li className="list-group-item my-3" style={{maxWidth:"27rem"}}>
-                                <LeftImageRightText imgSize={"6rem"} textSize={"1rem"} leftImage={footerDemo} rightText={"Discover the Most Magical Sunset in Santorini"}/>
+                                <LeftImageRightText imgSize={"6rem"} textSize={"1rem"} leftImage={footerDemo} rightText={"Discover the Most Magical Sunset in Santorini"} author={""} date={""}/>
                             </li>
 
                             <li className="list-group-item my-3" style={{maxWidth:"27rem"}}>
-                                <LeftImageRightText imgSize={"6rem"} textSize={"1rem"} leftImage={footerDemo} rightText={"Discover the Most Magical Sunset in Santorini"}/>
+                                <LeftImageRightText imgSize={"6rem"} textSize={"1rem"} leftImage={footerDemo} rightText={"Discover the Most Magical Sunset in Santorini"} author={""} date={""}/>
                             </li>
 
                             <li className="list-group-item my-3" style={{maxWidth:"27rem"}}>
-                                <LeftImageRightText imgSize={"6rem"} textSize={"1rem"} leftImage={footerDemo} rightText={"Discover the Most Magical Sunset in Santorini"}/>
+                                <LeftImageRightText imgSize={"6rem"} textSize={"1rem"} leftImage={footerDemo} rightText={"Discover the Most Magical Sunset in Santorini"} author={""} date={""}/>
                             </li>
                         </ul>
                     </li>
@@ -110,7 +110,7 @@ export function Footer(){
                     </li>
                 </ul>
             </div>
-
+            
         </footer>
     )
 }
