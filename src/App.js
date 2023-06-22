@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <Router>
         <Navbar/>
-        
+        <TopImageBottomText topImg={footerDemo} bottomText={"Now Is the Time to Think About Your Small-Business Success"} imgSize={"20rem"} headTextSize={"1.2rem"} author={"Armin Vans"} date={"June 19, 2023"} paragraph={"We woke reasonably late following the feast and free flowing wine the night before. After gathering ourselves and our packs, we headed down to..."} paraTextSize={"0.9rem"}/>
         <Footer/>
       </Router>
     </div>
