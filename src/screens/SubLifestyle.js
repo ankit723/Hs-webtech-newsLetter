@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
-import NewsCard from '../../Components/LifestyleCOMP/Card'
+import React from 'react'
 import { Button, Col, Container, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import Social from '../../Components/LifestyleCOMP/Social'
-import Popular from '../../Components/LifestyleCOMP/Popular'
-import MustRead from '../../Components/LifestyleCOMP/MustRead'
+import Social from '../Components/LifestyleCOMP/Social'
+import MustRead from '../Components/LifestyleCOMP/MustRead'
+import SubNewsCard from '../Components/LifestyleCOMP/SubCategory/SubNewsCard'
+import SubPopular from '../Components/LifestyleCOMP/SubCategory/SubPopular'
 
-const Lifestyle = () => {
+const SubLifestyle = ({ subcategory }) => {
     return (
         <>
             <Container>
@@ -35,7 +35,7 @@ const Lifestyle = () => {
                 </Row>
 
             </Container>
-            <NewsCard />
+            <SubNewsCard category={subcategory}/>
             <div className="container border-bottom py-3">
                 <ul className="footer1 d-flex justify-content-around list">
                     <li className="footer-list1 list-group-item">
@@ -43,7 +43,7 @@ const Lifestyle = () => {
                         <ul className="p-0 col-12">
                             <li className="list-group-item my-3" style={{ width: "100%" }}>
                                 {/* <LeftImageRightText imgSize={"6rem"} textSize={"1rem"} leftImage={footerDemo} rightText={"Discover the Most Magical Sunset in Santorini"} author={""} date={""} /> */}
-                                <Popular />
+                                <SubPopular category={subcategory}/>
                             </li>
                         </ul>
                     </li>
@@ -70,5 +70,4 @@ const Lifestyle = () => {
     )
 }
 
-export default Lifestyle
-
+export default SubLifestyle
