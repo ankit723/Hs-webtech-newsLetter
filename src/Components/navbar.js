@@ -3,7 +3,7 @@ import headTitle from "../Icons/Head-Title.webp"
 import headTitleLight from "../Icons/Head-Title-Light.webp"
 import hamburgerBg from "../Backgrounds/hamburgerNavBg.jpg"
 import addDemo from "../Icons/googleAddDemo.jpg"
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 export function Navbar(){
     const date = new Date('May 11, 2014');
@@ -53,12 +53,12 @@ export function Navbar(){
                 <div className="container header3 d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start py-2">
 
                     <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                        <li><a href="#" className="nav-link px-2 link-body-emphasis fw-bold">News</a></li>
-                        <li><a href="#" className="nav-link px-2 link-body-emphasis fw-bold">Fashion</a></li>
-                        <li><a href="#" className="nav-link px-2 link-body-emphasis fw-bold">Gadgets</a></li>
-                        <li><a href="#" className="nav-link px-2 link-body-emphasis fw-bold">Lifestyle</a></li>
-                        <li><a href="#" className="nav-link px-2 link-body-emphasis fw-bold">Video</a></li>
-                        <li><a href="#" className="nav-link px-2 link-body-emphasis fw-bold">Features</a></li>
+                    <li><Link className="nav-link px-2 link-body-emphasis fw-bold" to="/news">News</Link></li>
+                    <li><Link className="nav-link px-2 link-body-emphasis fw-bold" to="/fashion">Fashion</Link></li>
+                        <li><Link className="nav-link px-2 link-body-emphasis fw-bold" to="/gadgets">Gadgets</Link></li>
+                        <li><Link className="nav-link px-2 link-body-emphasis fw-bold" to="/lifestyle">LifeStyle</Link></li>
+                        <li><Link className="nav-link px-2 link-body-emphasis fw-bold" to="/video">Video</Link></li>
+                        <li><Link className="nav-link px-2 link-body-emphasis fw-bold" to="/features">Features</Link></li>
                     </ul>
 
                     <form className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
