@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Gadgets.css";
-import Card from "./RightImageLeftText/RightImageLeftText";
-import ArticleCard from './ArticleCard/ArticleCard'
+import Card from "../../Components/Gadgets/RightImageLeftText";
+import ArticleCard from '../../Components/Gadgets/ArticleCard';
 
 const Gadgets = () => {
   return (
