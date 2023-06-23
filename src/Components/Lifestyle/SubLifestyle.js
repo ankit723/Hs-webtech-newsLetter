@@ -1,17 +1,14 @@
 import React from 'react'
 import { Button, Col, Container, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-<<<<<<<< HEAD:src/Components/SubLifestyle.js
 import Social from '../Components/LifestyleCOMP/Social'
 import MustRead from '../Components/LifestyleCOMP/MustRead'
 import SubNewsCard from '../Components/LifestyleCOMP/SubCategory/SubNewsCard'
 import SubPopular from '../Components/LifestyleCOMP/SubCategory/SubPopular'
-========
 import Social from './Social'
 import MustRead from './MustRead'
 import SubNewsCard from './SubNewsCard'
 import SubPopular from './SubPopular'
->>>>>>>> 666f05616d64856dc71f73b7459e36cae8c438ad:src/Components/Lifestyle/SubLifestyle.js
 
 const SubLifestyle = ({ subcategory }) => {
     return (
