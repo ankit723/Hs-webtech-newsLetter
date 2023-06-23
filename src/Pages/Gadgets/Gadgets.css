@@ -1,0 +1,54 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px 30px;
+}
+.head-sec{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.head-sec h1{
+    margin: 8px 0px;
+}
+.head-sec ul{
+    display: flex;
+    justify-content: flex-start;
+    list-style: none;
+    padding: 0px;
+    margin: 0%;
+
+}
+ul li {
+ 
+    margin: 4px 8px;
+    padding: 2px 4px;
+}
+ul li a{
+    text-decoration-line: none;
+    font-size:14px ;
+    
+}
+.main-sec{
+    display: flex;
+    justify-content: space-between;
+}
+.sec1{
+    width: 60%;
+}
+
+.sec2{
+    width: 35%;
+    margin-top: 20px;
+}
+
+.advertisement{
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+    background-color: bisque;
+    height: 200px;
+    
+}
