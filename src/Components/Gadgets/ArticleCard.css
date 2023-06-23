@@ -28,7 +28,7 @@
     cursor: pointer;
 }
 .date{
-    text-align: center;
+    text-align:left;
    margin-top: 6px !important;
 
     /* margin-left:20px ; */
