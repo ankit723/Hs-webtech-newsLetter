@@ -1,10 +1,19 @@
 import React, { useState } from 'react'
+<<<<<<<< HEAD:src/Components/Lifestyle.js
 import NewsCard from '../Components/LifestyleCOMP/Card'
 import { Button, Col, Container, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import Social from '../Components/LifestyleCOMP/Social'
 import Popular from '../Components/LifestyleCOMP/Popular'
 import MustRead from '../Components/LifestyleCOMP/MustRead'
+========
+import NewsCard from './Card'
+import { Button, Col, Container, Row } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import Social from './Social'
+import Popular from './Popular'
+import MustRead from './MustRead'
+>>>>>>>> 666f05616d64856dc71f73b7459e36cae8c438ad:src/Components/Lifestyle/Lifestyle.js
 
 const Lifestyle = () => {
     return (

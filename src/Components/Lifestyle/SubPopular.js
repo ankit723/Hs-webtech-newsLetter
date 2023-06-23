@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container, Row, Col, Card } from 'react-bootstrap'
-import { priority } from '../../../constants/data'
+import { priority } from '../../constants/data'
 
 
 const SubPopular = ({ category }) => {

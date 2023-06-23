@@ -1,5 +1,5 @@
 import React from 'react'
-import { priority } from '../../../constants/data'
+import { priority } from '../../constants/data'
 import { Link } from 'react-router-dom'
 import { Container, Row, Col, Card } from 'react-bootstrap'
 
