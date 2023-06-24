@@ -34,7 +34,9 @@ ul li a{
 .main-sec{
     display: flex;
     justify-content: space-between;
+
 }
+
 .sec1{
     width: 60%;
 }
@@ -52,3 +54,18 @@ ul li a{
     height: 200px;
     
 }
+@media (max-width: 600px) {
+    .main-sec{
+        flex-direction: column;
+    }
+    .sec1{
+        width: 90%;
+        margin: auto;
+    }
+    
+    .sec2{
+        width: 90%;
+        margin: auto;
+        /* margin-top: 20px; */
+    }
+    }
