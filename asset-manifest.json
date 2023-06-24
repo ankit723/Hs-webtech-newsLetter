@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Hs-webtech-newsLetter/static/css/main.184a89e9.css",
+    "main.css": "/Hs-webtech-newsLetter/static/css/main.c1bfff46.css",
     "main.js": "/Hs-webtech-newsLetter/static/js/main.aaa25d7f.js",
     "static/js/787.b13fdd03.chunk.js": "/Hs-webtech-newsLetter/static/js/787.b13fdd03.chunk.js",
     "static/media/footerBg.jpg": "/Hs-webtech-newsLetter/static/media/footerBg.75f3b46d8343d61421c8.jpg",
@@ -13,12 +13,12 @@
     "static/media/Head-Title-Light.webp": "/Hs-webtech-newsLetter/static/media/Head-Title-Light.dc0acad874e547631317.webp",
     "static/media/Head-Title.webp": "/Hs-webtech-newsLetter/static/media/Head-Title.ecbf2a69d8ef37bc8a44.webp",
     "index.html": "/Hs-webtech-newsLetter/index.html",
-    "main.184a89e9.css.map": "/Hs-webtech-newsLetter/static/css/main.184a89e9.css.map",
+    "main.c1bfff46.css.map": "/Hs-webtech-newsLetter/static/css/main.c1bfff46.css.map",
     "main.aaa25d7f.js.map": "/Hs-webtech-newsLetter/static/js/main.aaa25d7f.js.map",
     "787.b13fdd03.chunk.js.map": "/Hs-webtech-newsLetter/static/js/787.b13fdd03.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.184a89e9.css",
+    "static/css/main.c1bfff46.css",
     "static/js/main.aaa25d7f.js"
   ]
 }
