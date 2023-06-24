@@ -169,6 +169,45 @@ const priority = [
 
 ]
 
+const news = [
+    {
+        id: 1,
+        category: "Fashion",
+        img: "/5.jpeg",
+        title: "Successful Entrepreneurship: Strategies for Startup Growth",
+        description: "We woke reasonably late following the feast and free flowing wine the night before. After gathering ourselves and our packs, we headed down to our homestay family’s small dining...",
+        author: "John Smith",
+        date: "2023-06-14"
+    },
+    {
+        id: 2,
+        category: "Travel",
+        img: "/6.jpeg",
+        title: "Successful Entrepreneurship: Strategies for Startup Growth",
+        description: "We woke reasonably late following the feast and free flowing wine the night before. After gathering ourselves and our packs, we headed down to our homestay family’s small dining...",
+        author: "John Smith",
+        date: "2023-06-14"
+    },
+    {
+        id: 3,
+        category: "Business",
+        img: "/3.jpeg",
+        title: "Successful Entrepreneurship: Strategies for Startup Growth",
+        description: "We woke reasonably late following the feast and free flowing wine the night before. After gathering ourselves and our packs, we headed down to our homestay family’s small dining...",
+        author: "John Smith",
+        date: "2023-06-14"
+    },
+    {
+        id: 4,
+        category: "Health & Fitness",
+        img: "/4.jpeg",
+        title: "Boosting Immunity: Essential Vitamins and Nutrients for a Healthy Lifestyle",
+        description: "We woke reasonably late following the feast and free flowing wine the night before. After gathering ourselves and our packs, we headed down to our homestay family’s small dining...",
+        author: "Emily Johnson",
+        date: "2023-06-14"
+    }
+]
+
 const someNews = [
     {
         category: "Sports",
@@ -249,4 +288,39 @@ const lifeStyleCategories = {
     category4: "Travel"
 }
 
-export { priority, trendingNews, socialLinks, someNews }
+const comments = [
+    {
+      name: "John Smith",
+      rating: 4.5,
+      review: "I love this product! It exceeded my expectations and has been incredibly useful in my daily life.",
+      date: "2023-06-14"
+    },
+    {
+      name: "Emily Johnson",
+      rating: 3.2,
+      review: "The product is decent, but I feel it could be improved in terms of quality. It's an okay purchase for the price.",
+      date: "2023-06-12"
+    },
+    {
+      name: "David Lee",
+      rating: 5,
+      review: "Absolutely fantastic! This product is a game-changer. I can't imagine my life without it now.",
+      date: "2023-06-10"
+    },
+    {
+      name: "Sarah Thompson",
+      rating: 2.8,
+      review: "I had high hopes for this product, but unfortunately, it didn't live up to my expectations. Disappointed with the performance.",
+      date: "2023-06-08"
+    },
+    {
+      name: "Michael Johnson",
+      rating: 4.7,
+      review: "Impressed with the quality and functionality of the product. It's definitely worth the investment.",
+      date: "2023-06-06"
+    },
+    // Add more reviews here
+  ];
+  
+
+export { priority, trendingNews, socialLinks, someNews, comments, news }

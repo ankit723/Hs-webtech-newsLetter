@@ -12,7 +12,7 @@ const Social = () => {
                 {socialLinks.map((Links) => (
                     <Row style={{padding: "10px"}}>
                         <Col xs={1}>
-                        <a href={`${Links.link}`}><img style={{"height":"20px"}} href={`${Links.link}`} src={`${Links.logo}`} alt={`${Links.title}`} /></a>
+                        <a href={`${Links.link}`}><img style={{"height":"20px", width: "20px"}} href={`${Links.link}`} src={`${Links.logo}`} alt={`${Links.title}`} /></a>
                         </Col>
                         <Col xs={1}>
                         <a style={{ color: "black"}} href={`${Links.link}`}><h6>{Links.alt}</h6></a>
