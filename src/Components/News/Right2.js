@@ -10,24 +10,21 @@ const Right2 = (props) => {
             </div>
             <Container className='p-0'>
                 <Row>
-                    {
-                        news.map((data) => (
 
                             <Col xs={12}>
                                 <Card style={{ width: '100%' }}>
                                     <Card.Body className='p-0'>
-                                        <Card.Title>{data.title}</Card.Title>
-                                        <Card.Subtitle style={{ color: "black", fontSize: "0.73rem", fontWeight: "700", width: "fit-content", "float": "left" }} className="mb-2 ">{data.author}</Card.Subtitle>
-                                        <Card.Subtitle style={{ color: "grey", fontSize: "0.7rem", "float": "left", fontWeight: "400" }} className="mb-2 ">&nbsp;-&nbsp;{data.date}</Card.Subtitle>
-                                        <Card.Img variant="top" src={data.img} style={{ aspectRatio: "2" }} />
+                                        <Card.Title>{news[3].title}</Card.Title>
+                                        <Card.Subtitle style={{ color: "black", fontSize: "0.73rem", fontWeight: "700", width: "fit-content", "float": "left" }} className="mb-2 ">{news[3].author}</Card.Subtitle>
+                                        <Card.Subtitle style={{ color: "grey", fontSize: "0.7rem", "float": "left", fontWeight: "400" }} className="mb-2 ">&nbsp;-&nbsp;{news[3].date}</Card.Subtitle>
+                                        <Card.Img variant="top" src={news[3].img} style={{ aspectRatio: "1.53" }} />
                                         <Card.Text>
-                                            {data.description}
+                                            {news[3].description}
                                         </Card.Text>
                                     </Card.Body>
                                 </Card>
                             </Col>
-                        ))
-                    }
+                        
                 </Row>
             </Container>
         </>
