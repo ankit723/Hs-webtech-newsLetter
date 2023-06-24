@@ -62,3 +62,37 @@ footer{
     flex-direction: column !important;
   }
 }
+
+.vidTab>h5:hover{
+  color: rgb(43, 160, 249);
+}
+
+.d-flex .mx-3:hover{
+  color: rgb(43, 160, 249);
+}
+
+.nav>li {
+  position: relative;
+}
+.nav>li::after {
+  position: absolute;
+  top: 51px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  content: "";
+  background-color: rgb(19, 184, 250);
+  width: 0%;
+  height: 4px;
+  transition: all 0.5s;
+}
+.nav>li:hover::after {
+  width: 100%;
+}
+.heroVideo2:hover{
+  transform: scale(1.01);
+}
+.heroVideo1:hover{
+  transform: scale(1.01);
+}
