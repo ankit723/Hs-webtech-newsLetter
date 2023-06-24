@@ -2,7 +2,7 @@ import './App.css';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './Components/navbar';
 import Footer from './Components/footer';
-import Gadgets from "./Pages/Gadgets/Gadgets";
+import Gadgets from "./Components/Gadgets/Gadgets/Gadgets";
 import Lifestyle from './Components/Lifestyle/Lifestyle';
 import Videos from './Components/Videos/video';
 
