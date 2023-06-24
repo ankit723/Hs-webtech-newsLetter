@@ -1,0 +1,17 @@
+.bg{
+    background: url("https://demo.tagdiv.com/newspaper_pro/wp-content/uploads/2019/08/38.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-bottom: 200px;
+   
+}
+.btn{
+    background-color: #d678a9 !important;
+    font-size: 10px !important;
+    border: none !important;
+}
+
+.SideBar{
+    margin-left: 5% !important;
+}

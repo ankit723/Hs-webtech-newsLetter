@@ -53,7 +53,7 @@ export function Navbar(){
                 <div className="container header3 d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start py-2">
 
                     <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <li><Link className="nav-link px-2 link-body-emphasis fw-bold" to="/news">News</Link></li>
+                    <li><Link className="nav-link px-2 link-body-emphasis fw-bold" to="/">News</Link></li>
                     <li><Link className="nav-link px-2 link-body-emphasis fw-bold" to="/fashion">Fashion</Link></li>
                         <li><Link className="nav-link px-2 link-body-emphasis fw-bold" to="/gadgets">Gadgets</Link></li>
                         <li><Link className="nav-link px-2 link-body-emphasis fw-bold" to="/lifestyle">LifeStyle</Link></li>
