@@ -12,6 +12,19 @@ footer{
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+.heroVideo1{
+  max-width: 100%;
+  height: 100%;
+  background-image: url("./Backgrounds/videosHero1.jpg");
+  background-repeat: no-repeat;
+}
+
+.heroVideo2{
+  max-width: 100%;
+  height: 100%;
+  background-image: url("./Backgrounds/videosHero2.jpg");
+  background-repeat: no-repeat;
+}
 @media screen and (max-width:768px) {
   .header1, .header2, .header3{
     display: none !important;
@@ -34,5 +47,18 @@ footer{
 
   .footer-list1, .footer-list2{
     margin-top: 2rem;
+  }
+
+  .videosHero{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .heroVideo1, .heroVideo2{
+    width: 25rem;
+  }
+
+  .main-Blog{
+    flex-direction: column !important;
   }
 }

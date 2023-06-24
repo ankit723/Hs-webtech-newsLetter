@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
-import NewsCard from './Card'
-import { Button, Col, Container, Row } from 'react-bootstrap'
+import React from 'react'
 import { Link } from 'react-router-dom'
+import { Button, Col, Container, Row } from 'react-bootstrap'
 import Social from './Social'
 import Popular from './Popular'
 import MustRead from './MustRead'
+import NewsCard from './Card'
 
 const Lifestyle = () => {
     return (
