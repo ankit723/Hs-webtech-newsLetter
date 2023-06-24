@@ -8,31 +8,30 @@ const Left1 = (props) => {
       <div className='display-inline-block px-0 pt-2' style={{ borderBottom: `2px solid ${props.color}` }}>
         <span className='' style={{ color: props.textColor, backgroundColor: props.color, fontSize: "12px", margin: "0", padding: "4px" }}>{props.type}</span>
       </div>
-      <Container style={{ padding: "10px" }}>
-        {news.map((news) => (
-          <Row className='d-flex'>
-            {/* <Col className='' xs={4}> */}
-            {/* <img className='my-auto' src={news.img} alt="FooterDemoImage" style={{ width: "100%", minHeight: "136", maxWidth: "243", aspectRatio: "1.53", objectFit: "cover" }} /> */}
-            {/* </Col> */}
-            {/* <img className='my-auto' src={news.img} alt="FooterDemoImage" style={{ width: "100%", minHeight: "136", maxWidth: "243", aspectRatio: "1.53", objectFit: "cover" }} /> */}
-            <Col className='d-flex'>
-              <img className='my-auto' src={news.img} alt="FooterDemoImage" style={{ "float": "left", width: "40%", minHeight: "91.219px", minWidth: "140.344px", aspectRatio: "1.53" }} />
-              <Card style={{ width: '100%', backgroundColor: "transparent", color: "#ffffff", border: "0px" }}>
-                <Card.Body style={{ backgroundColor: "transparent", border: "0px", padding: "0", paddingLeft: "1rem" }}>
-                  {/* <button style={{ border: "0px", marginBottom: "1rem", top: "0", backgroundColor: "black", color: "white", fontSize: "0.6rem" }}>{news.category}</button> */}
-                  <Card.Text style={{ color: "black", fontWeight: "500", fontSize: "20px", fontSize: "1.5vw", width: "auto", height: "auto" }}>
-                    {news.title}
-                  </Card.Text>
-                  <div className='display-flex'>
-                    <Card.Subtitle style={{ color: "black", fontSize: "0.73rem", fontWeight: "700", width: "fit-content", "float": "left" }} className="mb-2 ">{news.author}</Card.Subtitle>
-                    <Card.Subtitle style={{ color: "grey", fontSize: "0.7rem", "float": "left", fontWeight: "400" }} className="mb-2 ">&nbsp;-&nbsp;{news.date}</Card.Subtitle>
-                  </div>
-                  <p className='text-dark' style={{ "float": "left", fontSize: "0.74rem" }}>{news.description}</p>
+      <Container style={{ padding: "0px" }}>
+        <Row>
+          <Col className='p-0' xs={12} sm={12} md={6}>
+            <Card className='m-0'>
+              <Card.Body>
+                <Card.Img variant='top' src={news[1].img} />
+                <Card.Title style={{ fontWeight: "450", fontSize: "24px", marginTop: "10px" }}>{news[1].title}</Card.Title>
+                <p style={{ fontWeight: "700", fontSize: "13px" }}>{news[1].author}<span style={{ fontWeight: "300" }}>&nbsp;-&nbsp;{news[1].date}</span></p>
+                <Card.Text style={{ fontSize: "14px", fontWeight: "30" }}>{news[1].description}</Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col xs={12} sm={12} md={6}>
+            {news.map((data) => (
+              <Card className='m-0'>
+                <Card.Img className='my-auto' src={data.img} style={{ aspectRatio: "1.53", width: "20%" }} />
+                <Card.Body>
+                  <Card.Title style={{ fontWeight: "450", fontSize: "14px", marginTop: "10px" }}>{data.title}</Card.Title>
+                  <Card.Text style={{ fontWeight: "300", fontSize: "12px" }}>{data.date}</Card.Text>
                 </Card.Body>
               </Card>
-            </Col>
-          </Row>
-        ))}
+            ))}
+          </Col>
+        </Row>
       </Container>
     </>
   )
