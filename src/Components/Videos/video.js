@@ -53,11 +53,11 @@ export function Videos(props){
             <div className="container main-Blog d-flex justify-content-center my-5">
                 <div className="BlogPosts d-flex justify-content-center">
                     <div className="container">
-                        {posts.map(post=>(<TopVideoBottomText videoUrl={post.url} bottomText={post.title} author={"Ankit Biswas"} date={"August 7, 2023"}/>))}
+                        {posts.map(post=>(<TopVideoBottomText videoUrl={post.url} footTextSize="13px" bottomText={post.title} author={"Ankit Biswas"} date={"August 7, 2023"}/>))}
                     </div>
                     
                     <div className="container">
-                        {posts2.map(post=>(<TopVideoBottomText videoUrl={post.url} bottomText={post.title} author={"Ankit Biswas"} date={"August 7, 2023"}/>))}
+                        {posts2.map(post=>(<TopVideoBottomText videoUrl={post.url} footTextSize="13px" bottomText={post.title} author={"Ankit Biswas"} date={"August 7, 2023"}/>))}
                     </div>
                 </div>
 
