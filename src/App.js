@@ -7,7 +7,6 @@ import Gadgets from "./Components/Gadgets/Gadgets/Gadgets";
 import Lifestyle from './Components/Lifestyle/Lifestyle';
 import Videos from './Components/Videos/video';
 import Fashion from './Components/Fashion/Fashion';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
