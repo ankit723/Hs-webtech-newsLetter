@@ -4,6 +4,7 @@ import headTitleLight from "../Icons/Head-Title-Light.webp"
 import hamburgerBg from "../Backgrounds/hamburgerNavBg.jpg"
 import addDemo from "../Icons/googleAddDemo.jpg"
 import {Link} from 'react-router-dom';
+import TopImageBottomText from "./topImageBottomText";
 
 export function Navbar(){
     const date = new Date('May 11, 2014');
