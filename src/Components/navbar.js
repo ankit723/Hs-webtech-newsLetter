@@ -14,7 +14,11 @@ export function Navbar(){
     const month = monthsOfYear[date.getMonth()];
     const day = date.getDate();
     const year = date.getFullYear();
-
+    const posts = [
+        { url: "https://images.unsplash.com/photo-1551845728-6820a30c64e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDd8fHdvbWVufGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60", title: "Fashion Outfit Ideas From the Biggest Instagram Influencers" },
+        { url: "https://images.unsplash.com/photo-1551845728-6820a30c64e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDd8fHdvbWVufGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60", title: "Fashion Outfit Ideas From the Biggest Instagram Influencers" },
+        { url: "https://images.unsplash.com/photo-1551845728-6820a30c64e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDd8fHdvbWVufGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60", title: "Fashion Outfit Ideas From the Biggest Instagram Influencers" },
+        { url: "https://images.unsplash.com/photo-1551845728-6820a30c64e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDd8fHdvbWVufGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60", title: "Fashion Outfit Ideas From the Biggest Instagram Influencers" }]
     const formattedDate = `${dayOfWeek}, ${month} ${day},${year}`;
     return(
         <div className="App">
@@ -54,8 +58,22 @@ export function Navbar(){
 
                     <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                     <li><Link className="nav-link px-2 link-body-emphasis fw-bold" to="/">News</Link></li>
-                    <li><Link className="nav-link px-2 link-body-emphasis fw-bold" to="/fashion">Fashion</Link></li>
-                        <li><Link className="nav-link px-2 link-body-emphasis fw-bold" to="/gadgets">Gadgets</Link></li>
+                    <li><Link className="nav-link px-2 link-body-emphasis fw-bold dropdown-toggle" to="/fashion" id="fashion-drop" > Fashion</Link>
+                            <ul className="dropdown-menu" aria-labelledby="fashion-drop">
+                                <div className="container d-flex">
+                                    {posts.map(post => (<TopImageBottomText topImg={post.url} imgSize="230px"
+                                        headTextSize="18px" footTextSize="13px" bottomText={post.title} author={"Ankit Biswas"} date={"August 7, 2023"} />))}
+                                </div>
+                            </ul>
+                    </li>
+                        <li><Link className="nav-link px-2 link-body-emphasis fw-bold dropdown-toggle" to="/gadgets" id="gadget-drop">Gadgets</Link>
+                            <ul className="dropdown-menu" aria-labelledby="gadget-drop">
+                                <div className="container d-flex">
+                                    {posts.map(post => (<TopImageBottomText topImg={post.url} imgSize="230px"
+                                        headTextSize="18px" footTextSize="13px" bottomText={post.title} author={"Ankit Biswas"} date={"August 7, 2023"} />))}
+                                </div>
+                            </ul>
+                        </li>
                         <li><Link className="nav-link px-2 link-body-emphasis fw-bold" to="/lifestyle">LifeStyle</Link></li>
                         <li><Link className="nav-link px-2 link-body-emphasis fw-bold" to="/video">Video</Link></li>
                         <li><Link className="nav-link px-2 link-body-emphasis fw-bold" to="/features">Features</Link></li>
