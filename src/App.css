@@ -17,6 +17,7 @@ footer{
   height: 100%;
   background-image: url("./Backgrounds/videosHero1.jpg");
   background-repeat: no-repeat;
+  transition: transform .6s;
 }
 
 .heroVideo2{
@@ -24,6 +25,7 @@ footer{
   height: 100%;
   background-image: url("./Backgrounds/videosHero2.jpg");
   background-repeat: no-repeat;
+  transition: transform .6s;
 }
 @media screen and (max-width:768px) {
   .header1, .header2, .header3{
@@ -95,4 +97,11 @@ footer{
 }
 .heroVideo1:hover{
   transform: scale(1.01);
+}
+.dropdown-menu {
+  width:max-content;
+}
+li:hover .dropdown-menu {
+  display: block;
+  margin-top: 13px;
 }
