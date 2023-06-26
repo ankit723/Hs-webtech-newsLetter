@@ -8,7 +8,6 @@ import Lifestyle from './Components/Lifestyle/Lifestyle';
 import Videos from './Components/Videos/video';
 import Fashion from './Components/Fashion/Fashion';
 
-
 function App() {
   return (
     <div className="App">

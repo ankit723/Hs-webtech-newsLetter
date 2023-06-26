@@ -46,17 +46,17 @@ export default function Fashion(props) {
             
             <div className="BlogPosts d-flex justify-content-center">             
                  <div className="container mx-3">
-                     <VideoTopBottomText imageurl={"https://demo.tagdiv.com/newspaper_pro/wp-content/uploads/2019/08/23-696x464.jpg"} bottomText={'Fashion Outfit Ideas From the Biggest Instagram Influencers'} author={"Priyanka"} date={"August 7, 2023"}/>
-                     <VideoTopBottomText imageurl={"https://demo.tagdiv.com/newspaper_pro/wp-content/uploads/2019/08/38.jpg"} bottomText={'Fashion Outfit Ideas From the Biggest Instagram Influencers'} author={"Priyanka"} date={"August 7, 2023"}/>
-                     <VideoTopBottomText imageurl={"https://demo.tagdiv.com/newspaper_pro/wp-content/uploads/2019/08/38.jpg"} bottomText={'Fashion Outfit Ideas From the Biggest Instagram Influencers'} author={"Priyanka"} date={"August 7, 2023"}/>
-                     <VideoTopBottomText imageurl={"https://demo.tagdiv.com/newspaper_pro/wp-content/uploads/2019/08/38.jpg"} bottomText={'Fashion Outfit Ideas From the Biggest Instagram Influencers'} author={"Priyanka"} date={"August 7, 2023"}/>
+                     <VideoTopBottomText imageurl={"https://demo.tagdiv.com/newspaper_pro/wp-content/uploads/2019/08/23-696x464.jpg"} footTextSize="13px" imgSize="250px" bottomText={'Fashion Outfit Ideas From the Biggest Instagram Influencers'} author={"Priyanka"} date={"August 7, 2023"}/>
+                     <VideoTopBottomText imageurl={"https://demo.tagdiv.com/newspaper_pro/wp-content/uploads/2019/08/38.jpg"} footTextSize="13px" imgSize="250px" bottomText={'Fashion Outfit Ideas From the Biggest Instagram Influencers'} author={"Priyanka"} date={"August 7, 2023"}/>
+                     <VideoTopBottomText imageurl={"https://demo.tagdiv.com/newspaper_pro/wp-content/uploads/2019/08/38.jpg"} footTextSize="13px" imgSize="250px" bottomText={'Fashion Outfit Ideas From the Biggest Instagram Influencers'} author={"Priyanka"} date={"August 7, 2023"}/>
+                     <VideoTopBottomText imageurl={"https://demo.tagdiv.com/newspaper_pro/wp-content/uploads/2019/08/38.jpg"} footTextSize="13px" imgSize="250px" bottomText={'Fashion Outfit Ideas From the Biggest Instagram Influencers'} author={"Priyanka"} date={"August 7, 2023"}/>
                  </div>
                  
                  <div className="container mx-3">
-                    <VideoTopBottomText imageurl={"https://demo.tagdiv.com/newspaper_pro/wp-content/uploads/2019/08/38.jpg"} bottomText={'Fashion Outfit Ideas From the Biggest Instagram Influencers'} author={"Priyanka"} date={"August 7, 2023"}/>
-                    <VideoTopBottomText imageurl={"https://demo.tagdiv.com/newspaper_pro/wp-content/uploads/2019/08/38.jpg"} bottomText={'Fashion Outfit Ideas From the Biggest Instagram Influencers'} author={"Priyanka"} date={"August 7, 2023"}/>
-                    <VideoTopBottomText imageurl={"https://demo.tagdiv.com/newspaper_pro/wp-content/uploads/2019/08/38.jpg"} bottomText={'Fashion Outfit Ideas From the Biggest Instagram Influencers'} author={"Priyanka"} date={"August 7, 2023"}/>
-                    <VideoTopBottomText imageurl={"https://demo.tagdiv.com/newspaper_pro/wp-content/uploads/2019/08/38.jpg"} bottomText={'Fashion Outfit Ideas From the Biggest Instagram Influencers'} author={"Priyanka"} date={"August 7, 2023"}/>
+                    <VideoTopBottomText imageurl={"https://demo.tagdiv.com/newspaper_pro/wp-content/uploads/2019/08/38.jpg"} footTextSize="13px" imgSize="250px" bottomText={'Fashion Outfit Ideas From the Biggest Instagram Influencers'} author={"Priyanka"} date={"August 7, 2023"}/>
+                    <VideoTopBottomText imageurl={"https://demo.tagdiv.com/newspaper_pro/wp-content/uploads/2019/08/38.jpg"} footTextSize="13px" imgSize="250px" bottomText={'Fashion Outfit Ideas From the Biggest Instagram Influencers'} author={"Priyanka"} date={"August 7, 2023"}/>
+                    <VideoTopBottomText imageurl={"https://demo.tagdiv.com/newspaper_pro/wp-content/uploads/2019/08/38.jpg"} footTextSize="13px" imgSize="250px" bottomText={'Fashion Outfit Ideas From the Biggest Instagram Influencers'} author={"Priyanka"} date={"August 7, 2023"}/>
+                    <VideoTopBottomText imageurl={"https://demo.tagdiv.com/newspaper_pro/wp-content/uploads/2019/08/38.jpg"} footTextSize="13px" imgSize="250px" bottomText={'Fashion Outfit Ideas From the Biggest Instagram Influencers'} author={"Priyanka"} date={"August 7, 2023"}/>
                  </div>
             </div>
 
