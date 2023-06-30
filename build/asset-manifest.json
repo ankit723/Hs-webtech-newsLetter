@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/Hs-webtech-newsLetter/static/css/main.05b6502f.css",
+    "main.js": "/Hs-webtech-newsLetter/static/js/main.065f73c2.js",
+    "static/js/787.b13fdd03.chunk.js": "/Hs-webtech-newsLetter/static/js/787.b13fdd03.chunk.js",
+    "static/media/footerBg.jpg": "/Hs-webtech-newsLetter/static/media/footerBg.75f3b46d8343d61421c8.jpg",
+    "static/media/hamburgerNavBg.jpg": "/Hs-webtech-newsLetter/static/media/hamburgerNavBg.d582731e31fe7a5e8f58.jpg",
+    "static/media/videosHero1.jpg": "/Hs-webtech-newsLetter/static/media/videosHero1.e9cd09eececd6a934204.jpg",
+    "static/media/videosHero2.jpg": "/Hs-webtech-newsLetter/static/media/videosHero2.a9a05878593ee7f03406.jpg",
+    "static/media/googleAddDemoSquare.jpg": "/Hs-webtech-newsLetter/static/media/googleAddDemoSquare.5bfa81e36400a2b32717.jpg",
+    "static/media/googleAddDemo.jpg": "/Hs-webtech-newsLetter/static/media/googleAddDemo.1043a4577fd3f0e6257b.jpg",
+    "static/media/demoFooter.jpg": "/Hs-webtech-newsLetter/static/media/demoFooter.aa8c6b529eaeb293b71f.jpg",
+    "static/media/Head-Title-Light.webp": "/Hs-webtech-newsLetter/static/media/Head-Title-Light.dc0acad874e547631317.webp",
+    "static/media/Head-Title.webp": "/Hs-webtech-newsLetter/static/media/Head-Title.ecbf2a69d8ef37bc8a44.webp",
+    "index.html": "/Hs-webtech-newsLetter/index.html",
+    "main.05b6502f.css.map": "/Hs-webtech-newsLetter/static/css/main.05b6502f.css.map",
+    "main.065f73c2.js.map": "/Hs-webtech-newsLetter/static/js/main.065f73c2.js.map",
+    "787.b13fdd03.chunk.js.map": "/Hs-webtech-newsLetter/static/js/787.b13fdd03.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.05b6502f.css",
+    "static/js/main.065f73c2.js"
+  ]
+}
