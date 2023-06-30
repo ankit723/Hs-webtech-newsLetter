@@ -7,6 +7,7 @@ import Gadgets from "./Components/Gadgets/Gadgets/Gadgets";
 import Lifestyle from './Components/Lifestyle/Lifestyle';
 import Videos from './Components/Videos/video';
 import Fashion from './Components/Fashion/Fashion';
+import Admin from './Components/admin';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/lifestyle" element={<Lifestyle />}/>
           <Route path="/video" element={<Videos />}/>
           <Route path="/fashion" element={<Fashion />}/>
+          <Route path="/admin" element={<Admin />}/>
         </Routes>
         <Footer/>
       </Router>
