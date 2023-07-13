@@ -4,6 +4,7 @@ export function Admin() {
     const [pageValue, setPageValue]=useState("")
     const [itemValue, setItemValue]=useState("")
     const [input, setInput]=useState("")
+    const [selectedImage, setSelectedImage] = useState(null);
     const [headInputValue, setHeadInputValue]=useState("")
     const [paraInputValue, setParaInputValue]=useState("")
     const [majorInputValue, setMajorInputValue]=useState(false)
@@ -16,6 +17,10 @@ export function Admin() {
         setPageValue(event.target.value)
     }
     
+    const handleImageInput=(event)=>{
+        setSelectedImage(event.target.files[0])
+    }
+
     const handleHeadInput=(event)=>{
         setHeadInputValue(event.target.value)
     }
@@ -25,40 +30,45 @@ export function Admin() {
     }
     
     const handleMajorInput=(event)=>{
-        setMajorInputValue(event.target.value)
+        setMajorInputValue(event.target.checked)
     }
 
     const handleItemChange=(event)=>{
         setItemValue(event.target.value)
         let inputs=[]
         inputs.push(
-            <div key={`input-container`}>
+            <div className="" key={`input-container`}>
+              <label htmlFor={`heading`}>{`Image`}</label>
+              <input className="image my-2 p-1" type="file" name={`PostImage`} onChange={handleImageInput}/>
+              
               <label htmlFor={`heading`}>{`Heading`}</label>
-              <input className="my-2 p-1" type="text" name={`heading`} onChange={handleHeadInput}/>
+              <input className="heading my-2 p-1" type="text" name={`heading`} onChange={handleHeadInput}/>
     
               <label htmlFor={`para`}>{`Paragraph`}</label>
-              <input className="my-2 p-1" type="text" name={`para`} onChange={handleParaInput}/>
+              <input className=" para my-2 p-1" type="text" name={`para`} onChange={handleParaInput}/>
 
               <label htmlFor={`Major`}>{`Major`}</label>
-              <input className="my-2 p-1" type="checkbox" name={`major`} onChange={handleMajorInput} />
+              <input className="major my-2 p-1" type="checkbox" name={`major`} onChange={handleMajorInput}/>
             </div>
           );
         setInput(inputs)
     }   
     
     const handleClick=()=>{
-        console.log(pageValue)
+        
+        const formData = new FormData();
+        formData.append('page', pageValue)
+        formData.append('item', itemValue)
+        formData.append('image', selectedImage)
+        formData.append('head', headInputValue)
+        formData.append('para', paraInputValue)
+        formData.append('major', majorInputValue)
+
         fetch("http://localhost:5000/hello", {
             method:"POST",
             mode:"cors",
-            body:JSON.stringify({
-                page:pageValue,
-                item:itemValue,
-                postHeading:headInputValue,
-                postPara:paraInputValue,
-                postMajor:majorInputValue
-            }),
-            headers: { 'Content-type': 'application/json ' }
+            body:formData,
+            
         })
         .then(result=>{
             if(result){
@@ -68,6 +78,10 @@ export function Admin() {
                     setHeadInputValue("")
                     setParaInputValue("")
                     setMajorInputValue("")
+                    setSelectedImage(null)
+                    document.getElementsByName('heading')[0].value = "";
+                    document.getElementsByName('para')[0].value = "";
+                    document.getElementsByName('major')[0].checked = false;
                 }else{
                     window.location.reload()
                 }
