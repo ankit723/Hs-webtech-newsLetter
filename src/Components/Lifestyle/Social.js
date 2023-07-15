@@ -10,7 +10,7 @@ const Social = () => {
             </div>
             <Container style={{borderTop: " 2px solid black"}}>
                 {socialLinks.map((Links) => (
-                    <Row style={{padding: "10px"}}>
+                    <Row style={{padding: "10px"}} key={Links.alt}>
                         <Col xs={1}>
                         <a href={`${Links.link}`}><img style={{"height":"20px", width: "20px"}} href={`${Links.link}`} src={`${Links.logo}`} alt={`${Links.title}`} /></a>
                         </Col>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container, Row, Col, Card } from 'react-bootstrap'
-import { news } from '../../constants/data'
+// import { news } from '../../constants/data'
 
 const Left2 = (props) => {
   return (
@@ -10,34 +10,26 @@ const Left2 = (props) => {
       </div>
       <Container className='p-0'>
         <Row>
-          <Col className='p-0' xs={12} sm={12} md={6}>
-            <Card className='m-0'>
+            {props.data.filter( (fil) => fil.major === true && fil.item === props.type ).map( (data) => (
+              <Col className='p-0' xs={12} sm={12} md={6} key={data._id}>
+                <Card className='m-0'>
               <Card.Body>
-                <Card.Img variant='top' src={news[1].img} style={{ aspectRatio: "1.53" }} />
-                <Card.Title style={{ fontWeight: "450", fontSize: "24px", marginTop: "10px" }}>{news[1].title}</Card.Title>
-                <p style={{ fontWeight: "700", fontSize: "13px" }}>{news[1].author}<span style={{ fontWeight: "300" }}>&nbsp;-&nbsp;{news[1].date}</span></p>
-                <Card.Text style={{ fontSize: "14px", fontWeight: "30" }}>{news[1].description}</Card.Text>
+                <Card.Img variant='top' src={`http://localhost:5000/uploads/${data.image}`} style={{ aspectRatio: "1.53" }} />
+                <Card.Title style={{ fontWeight: "450", fontSize: "24px", marginTop: "10px" }}>{data.head}</Card.Title>
+                <p style={{ fontWeight: "700", fontSize: "13px" }}>{data.admin}<span style={{ fontWeight: "300" }}>&nbsp;-&nbsp;{data.date}</span></p>
+                <Card.Text style={{ fontSize: "14px", fontWeight: "30" }}>{data.para}</Card.Text>
               </Card.Body>
             </Card>
           </Col>
-          <Col className='p-0' xs={12} sm={12} md={6}>
-            <Card className='m-0'>
-              <Card.Body>
-                <Card.Img variant='top' src={news[2].img} style={{ aspectRatio: "1.53" }} />
-                <Card.Title style={{ fontWeight: "450", fontSize: "24px", marginTop: "10px" }}>{news[2].title}</Card.Title>
-                <p style={{ fontWeight: "700", fontSize: "13px" }}>{news[2].author}<span style={{ fontWeight: "300" }}>&nbsp;-&nbsp;{news[2].date}</span></p>
-                <Card.Text style={{ fontSize: "14px", fontWeight: "30" }}>{news[2].description}</Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
+            ))}
         </Row>
         <Row>
-          {news.map((data) => (
-            <Col xs={12} sm={6}>
+          {props.data.filter( (fil) => fil.major !== true && fil.item === props.type ).map((data) => (
+            <Col xs={12} sm={6} key={data._id}>
               <Card className='m-0'>
-                <Card.Img className='my-auto' src={data.img} style={{ aspectRatio: "1.53", width: "20%" }} />
+                <Card.Img className='my-auto' src={`http://localhost:5000/uploads/${data.image}`} style={{ aspectRatio: "1.53", width: "20%" }} />
                 <Card.Body>
-                  <Card.Title style={{ fontWeight: "450", fontSize: "14px", marginTop: "10px" }}>{data.title}</Card.Title>
+                  <Card.Title style={{ fontWeight: "450", fontSize: "14px", marginTop: "10px" }}>{data.head}</Card.Title>
                   <Card.Text style={{ fontWeight: "300", fontSize: "12px" }}>{data.date}</Card.Text>
                 </Card.Body>
               </Card>

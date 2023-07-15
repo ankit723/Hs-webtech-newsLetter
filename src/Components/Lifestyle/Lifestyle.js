@@ -1,12 +1,29 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Button, Col, Container, Row } from 'react-bootstrap'
 import Social from './Social'
 import Popular from './Popular'
 import MustRead from './MustRead'
 import NewsCard from './Card'
+import { setlifestylePosts } from '../../state'
+import { useDispatch, useSelector } from 'react-redux'
 
 const Lifestyle = () => {
+    const dispatch = useDispatch();
+    const lifestylePosts = useSelector( (state) => state.lifestylePosts );
+
+    const getLifestyle = async () => {
+        const res = await fetch("http://localhost:5000/lifestyleP", {
+            method: "GET"
+        });
+        const data = await res.json();
+        dispatch(setlifestylePosts( { lifestylePosts: data } ));
+    }
+
+    useEffect(() => {
+        getLifestyle();
+    }, []);
+
     return (
         <>
             <Container>
@@ -35,7 +52,7 @@ const Lifestyle = () => {
                 </Row>
 
             </Container>
-            <NewsCard />
+            <NewsCard data={lifestylePosts} />
             <div className="container border-bottom py-3">
                 <ul className="footer1 d-flex justify-content-around list">
                     <li className="footer-list1 list-group-item">
@@ -43,7 +60,7 @@ const Lifestyle = () => {
                         <ul className="p-0 col-12">
                             <li className="list-group-item my-3" style={{ width: "100%" }}>
                                 {/* <LeftImageRightText imgSize={"6rem"} textSize={"1rem"} leftImage={footerDemo} rightText={"Discover the Most Magical Sunset in Santorini"} author={""} date={""} /> */}
-                                <Popular />
+                                <Popular type="Articles" data={lifestylePosts} />
                             </li>
                         </ul>
                     </li>
@@ -58,7 +75,7 @@ const Lifestyle = () => {
 
                             <li className="list-group-item my-3" style={{ maxWidth: "27rem" }}>
                                 {/* <LeftImageRightText imgSize={"6rem"} textSize={"1rem"} leftImage={footerDemo} rightText={"Discover the Most Magical Sunset in Santorini"} author={""} date={""} /> */}
-                                <MustRead />
+                                <MustRead type="Recent Articles" data={lifestylePosts} />
                             </li>
                         </ul>
                     </li>
