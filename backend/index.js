@@ -98,6 +98,7 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 
+
 app.post("/hello", upload.single('image'), async (req, res) => {
     const postImage = req.file; // Use req.file instead of req.image
     const { page, item, head, para, major } = req.body;
