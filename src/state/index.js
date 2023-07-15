@@ -4,7 +4,8 @@ const initialState = {
     newsPosts: [],
     lifestylePosts: [],
     gadgetsPosts: [],
-    fashionPosts: []
+    fashionPosts: [],
+    comments: []
 };
 
 export const aSlice = createSlice({
@@ -22,9 +23,12 @@ export const aSlice = createSlice({
         },
         setfasionPosts: ( state, action ) => {
             state.fashionPosts = action.payload.fashionPosts;
+        },
+        setComments: ( state, action ) => {
+            state.comments = action.payload.comments;
         }
     }
 });
 
-export const { setnewsPosts, setlifestylePosts, setgadgetsPosts, setfasionPosts } = aSlice.actions;
+export const { setnewsPosts, setlifestylePosts, setgadgetsPosts, setfasionPosts, setComments } = aSlice.actions;
 export default aSlice.reducer;

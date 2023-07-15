@@ -11,10 +11,10 @@ const Comments = (props) => {
       <Container className='p-0'>
       </Container>
       <Container className='px-0 pt-2' style={{ borderTop: " 2px solid black" }}>
-        {comments.map((news) => (
-          <Row>
+        {props.data.map((news) => (
+          <Row key={news._id}>
             <p style={{ fontStyle: "italic", fontWeight: "500" }}>
-              {news.review}<span style={{ fontWeight: "300", fontStyle: "normal" }}>- {news.name}</span>
+              {news.comment}<span style={{ fontWeight: "300", fontStyle: "normal" }}>- {news.author}</span>
             </p>
           </Row>
         ))}
