@@ -173,26 +173,6 @@ const fashionSchema = new mongoose.Schema(
 );
 const Fashion = mongoose.model('Fashion', fashionSchema);
 
-const testimonials = new mongoose.Schema(
-    {
-        author: {
-            type: String,
-            required: true,
-            default: "Anonymous"
-        },
-        comment: {
-            type: String,
-            required: true
-        },
-        rating: {
-            type: Number,
-            require: true
-        }
-    },
-    { timestamps: true }
-);
-const Comments = mongoose.model('Comments', testimonials);
-
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, 'uploads/')
@@ -303,20 +283,10 @@ const getFashion = async ( req, res ) => {
     }
 }
 
-const getComments = async ( req, res ) => {
-    try {
-        const comm = await Comments.find();
-        res.status(200).json(comm);
-    } catch (error) {
-        res.status(404).json({ message: error.message });
-    }
-}
-
 app.get("/newsP", getNews);
 app.get("/lifestyleP", getLifestyle);
 app.get("/gadgetsP", getGadgets);
 app.get("/fashionP", getFashion);
-app.get("/comm", getComments);
 
 app.listen(5000, () => {
     console.log("The App has started listen on port 5000")
