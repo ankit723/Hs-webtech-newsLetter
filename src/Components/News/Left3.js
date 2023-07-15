@@ -1,5 +1,4 @@
 import React from 'react'
-import { news } from '../../constants/data'
 import { Container, Row, Col, Card } from 'react-bootstrap'
 
 const Left3 = (props) => {
@@ -10,14 +9,14 @@ const Left3 = (props) => {
             </div>
             <Container style={{ padding: "10px" }}>
                 <Row>
-                {news.filter((cate) => cate.id < 4 ).map((news) => (
+                {props.data.filter((cate) => cate.item === props.type ).map((news) => (
                     
-                        <Col xs={12} sm={6} md={4}>
-                        <Card.Img className='p-0' src={news.img} alt="FooterDemoImage" style={{ aspectRatio: "1.53" }} />
+                        <Col xs={12} sm={6} md={4} key={news._id}>
+                        <Card.Img className='p-0' src={`http://localhost:5000/uploads/${news.image}`} alt="FooterDemoImage" style={{ aspectRatio: "1.53" }} />
                             <Card className='m-0'style={{ width: '100%', backgroundColor: "transparent", color: "#ffffff", border: "0px" }}>
                                 <Card.Body style={{ backgroundColor: "transparent", border: "0px", padding: "0" }}>
                                     <Card.Text style={{ color: "black", fontWeight: "500", fontSize: "14px", width: "auto", height: "auto" }}>
-                                        {news.title}
+                                        {news.head}
                                     </Card.Text>
                                 </Card.Body>
                             </Card>

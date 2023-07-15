@@ -1,5 +1,4 @@
 import React from 'react'
-import { news } from '../../constants/data'
 import { Container, Row, Col, Card } from 'react-bootstrap'
 
 const Left4 = (props) => {
@@ -10,14 +9,14 @@ const Left4 = (props) => {
             </div>
             <Container style={{ padding: "10px" }}>
                 <Row>
-                {props.data.map((data) => (
+                {props.data.filter( (fil) => fil.item === props.type ).map((data) => (
                     
-                        <Col xs={12} sm={6} md={6}>
-                        <Card.Img className='p-0' src={data.img} alt="FooterDemoImage" style={{ aspectRatio: props.aspect }} />
+                        <Col xs={12} sm={6} md={6} key={data._id}>
+                        <Card.Img className='p-0' src={`http://localhost:5000/uploads/${data.image}`} alt="FooterDemoImage" style={{ aspectRatio: props.aspect }} />
                             <Card className='m-0'style={{ width: '100%', backgroundColor: "transparent", color: "#ffffff", border: "0px" }}>
                                 <Card.Body style={{ backgroundColor: "transparent", border: "0px", padding: "0" }}>
                                     <Card.Text className='m-0' style={{ color: "black", fontWeight: props.weight, fontSize: props.titleSize, width: "auto", height: "auto" }}>
-                                        {data.title}
+                                        {data.head}
                                     </Card.Text>
                                     <Card.Text className='mb-3' style={{ color: "black", fontWeight: "40", fontSize: "12px", width: "auto", height: "auto" }}>{data.date}</Card.Text>
                                 </Card.Body>

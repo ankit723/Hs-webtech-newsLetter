@@ -13,160 +13,281 @@ import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-const UPLOADS_DIR = path.join(__dirname, 'uploads');
+// const UPLOADS_DIR = path.join(__dirname, 'uploads');
 
 const app = express()
 app.use(express.json())
 app.use(bodyParser.urlencoded({ extended: true }))
-app.use(cors())
+app.use(cors());
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 function establishMongooseConnection(dbName) {
     mongoose.connect(`mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASSWORD}@cluster0.gy84sde.mongodb.net/${dbName}?retryWrites=true&w=majority`, {
         useNewUrlParser: true,
         useUnifiedTopology: true
     })
-    .then(() => {
-        console.log(`Connected to the mongodb of ${dbName}`)
-    })
-    .catch((error) => {
-        console.log("Mongod connection error; ", error)
-    })
+        .then(() => {
+            console.log(`Connected to the mongodb of ${dbName}`)
+        })
+        .catch((error) => {
+            console.log("Mongod connection error; ", error)
+        })
 }
 establishMongooseConnection("BlogPost")
 
 
 
-const newsSchema = new mongoose.Schema({
-    admin: { type: String, default:"Ankit"},
-    date:{type:Date, required:true },
-    item:{type:String, required:true},
-    image:{ data: Buffer, contentType: String },
-    head:{type:String, required:true},
-    para:{type:String, required:true},
-    major:{type:Boolean, required:true},
-});
+const newsSchema = new mongoose.Schema(
+    {
+        admin: {
+            type: String,
+            default: "Ankit"
+        },
+        date: {
+            type: Date,
+            required: true
+        },
+        item: {
+            type: String,
+            required: true
+        },
+        image: String,
+        head: {
+            type: String,
+            required: true
+        },
+        para: {
+            type: String,
+            required: true
+        },
+        major: {
+            type: Boolean,
+            required: true
+        },
+    },
+    { timestamps: true }
+);
 const News = mongoose.model('News', newsSchema);
 
 
 
-const lifestyleSchema = new mongoose.Schema({
-    admin: { type: String, default:"Ankit"},
-    date:{type:Date, required:true },
-    item:{type:String, required:true},
-    image: { data: Buffer, contentType: String },
-    head:{type:String, required:true},
-    para:{type:String, required:true},
-    major:{type:Boolean, required:true},
-});
+const lifestyleSchema = new mongoose.Schema(
+    {
+        admin: {
+            type: String,
+            default: "Ankit"
+        },
+        date: {
+            type: Date,
+            required: true
+        },
+        item: {
+            type: String,
+            required: true
+        },
+        image: String,
+        head: {
+            type: String,
+            required: true
+        },
+        para: {
+            type: String,
+            required: true
+        },
+        major: {
+            type: Boolean,
+            required: true
+        },
+    },
+    { timestamps: true }
+);
 const LifeStyle = mongoose.model('LifeStyle', lifestyleSchema);
 
 
 
-const gadgetSchema = new mongoose.Schema({
-    admin: { type: String, default:"Ankit"},
-    date:{type:Date, required:true },
-    item:{type:String, required:true},
-    image: { data: Buffer, contentType: String },
-    head:{type:String, required:true},
-    para:{type:String, required:true},
-    major:{type:Boolean, required:true},
-});
+const gadgetSchema = new mongoose.Schema(
+    {
+        admin: {
+            type: String,
+            default: "Ankit"
+        },
+        date: {
+            type: Date,
+            required: true
+        },
+        item: {
+            type: String,
+            required: true
+        },
+        image: String,
+        head: {
+            type: String,
+            required: true
+        },
+        para: {
+            type: String,
+            required: true
+        },
+        major: {
+            type: Boolean,
+            required: true
+        },
+    },
+    { timestamps: true }
+);
 const Gadget = mongoose.model('Gadget', gadgetSchema);
 
 
 
-const fashionSchema = new mongoose.Schema({
-    admin: { type: String, default:"Ankit"},
-    date:{type:Date, required:true },
-    item:{type:String, required:true},
-    image: { data: Buffer, contentType: String },
-    head:{type:String, required:true},
-    para:{type:String, required:true},
-    major:{type:Boolean, required:true},
-});
+const fashionSchema = new mongoose.Schema(
+    {
+        admin: {
+            type: String,
+            default: "Ankit"
+        },
+        date: {
+            type: Date,
+            required: true
+        },
+        item: {
+            type: String,
+            required: true
+        },
+        image: {
+            type: String,
+            required: true
+        },
+        head: {
+            type: String,
+            required: true
+        },
+        para: {
+            type: String,
+            required: true
+        },
+        major: {
+            type: Boolean,
+            required: true
+        },
+    }
+);
 const Fashion = mongoose.model('Fashion', fashionSchema);
 
-
-
 const storage = multer.diskStorage({
-    destination: 'uploads/', // Set the destination folder for uploaded files
+    destination: (req, file, cb) => {
+        cb(null, 'uploads/')
+    }, // Set the destination folder for uploaded files
     filename: (req, file, cb) => {
-      // Generate a unique filename for the uploaded file
-      const uniqueSuffix = `${Date.now()}-${Math.round(Math.random() * 1E9)}`;
-      cb(null, `${uniqueSuffix}-${file.originalname}`);
+        // Generate a unique filename for the uploaded file
+        const uniqueSuffix = `${Date.now()}-${Math.round(Math.random() * 1E9)}`;
+        cb(null, `${uniqueSuffix}-${file.originalname}`);
     },
 });
 const upload = multer({ storage });
 
 
 app.post("/hello", upload.single('image'), async (req, res) => {
-    const postImage = req.file; // Use req.file instead of req.image
-    const { page, item, head, para, major } = req.body;
-    const date=new Date()
+    try {
+        const { page, item, head, para, major } = req.body;
+        const postImage = req.file.filename;
+        const date = new Date();
+        if (page === "news") {
+            const newNews = new News({
+                item,
+                head,
+                image: postImage,
+                para,
+                major,
+                date
+            });
+            await newNews.save();
+            const post = await News.find();
+            // console.log(post, { message: 'File uploaded successfully' });
+            res.status(201).json(post);
+        } else if (page === "fashion") {
+            const newFashion = new Fashion({
+                item,
+                head,
+                image: postImage,
+                para,
+                major,
+                date
+            });
+            await newFashion.save();
+            const post = await News.find();
+            // console.log(post, { message: 'File uploaded successfully' });
+            res.status(201).json(post);
+        } else if (page === "gadgets") {
+            const newGadget = new Gadget({
+                item,
+                head,
+                image: postImage,
+                para,
+                major,
+                date
+            });
+            await newGadget.save();
+            const post = await News.find();
+            // console.log(post, { message: 'File uploaded successfully' });
+            res.status(201).json(post);
 
-    console.log(page, item, head, para, major);
-  
-    if(major){
-        if (page === "news") {
-            const newNews = new News({ item, head, para, major, date});
-            newNews.image.data = fs.readFileSync(path.join(UPLOADS_DIR, req.file.filename))
-            newNews.image.contentType = postImage.mimetype;
-            await newNews.save();
-            res.json({ message: 'File uploaded successfully' });
-    
-        } else if (page === "fashion") {
-            const newFashion = new Fashion({ item, head, para, major, date});
-            newFashion.image.data = postImage.buffer; // Use postImage.buffer instead of image.Buffer
-            newFashion.image.contentType = postImage.mimetype;
-            await newFashion.save();
-            res.json({ message: 'File uploaded successfully' });
-    
-        } else if (page === "gadgets") {
-            const newGadget = new Gadget({ item, head, para, major, date});
-            newGadget.image.data = postImage.buffer; // Use postImage.buffer instead of image.Buffer
-            newGadget.image.contentType = postImage.mimetype;
-            await newGadget.save();
-            res.json({ message: 'File uploaded successfully' });
-    
         } else {
-            const newLifeStyle = new LifeStyle({ item, head, para, major, date});
-            newLifeStyle.image.data = postImage.buffer; // Use postImage.buffer instead of image.Buffer
-            newLifeStyle.image.contentType = postImage.mimetype;
+            const newLifeStyle = new LifeStyle({
+                item,
+                head,
+                image: postImage,
+                para,
+                major,
+                date
+            });
             await newLifeStyle.save();
-            res.json({ message: 'File uploaded successfully' });
+            const post = await News.find();
+            // console.log(post, { message: 'File uploaded successfully' });
+            res.status(201).json(post);
         }
-    }else{
-        if (page === "news") {
-            const newNews = new News({ item, head, para, date});
-            newNews.image.data = fs.readFileSync(path.join(UPLOADS_DIR, req.file.filename))
-            newNews.image.contentType = postImage.mimetype;
-            await newNews.save();
-            res.json({ message: 'File uploaded successfully' });
-    
-        } else if (page === "fashion") {
-            const newFashion = new Fashion({ item, head, para, date});
-            newFashion.image.data = postImage.buffer; // Use postImage.buffer instead of image.Buffer
-            newFashion.image.contentType = postImage.mimetype;
-            await newFashion.save();
-            res.json({ message: 'File uploaded successfully' });
-    
-        } else if (page === "gadgets") {
-            const newGadget = new Gadget({ item, head, para, date});
-            newGadget.image.data = postImage.buffer; // Use postImage.buffer instead of image.Buffer
-            newGadget.image.contentType = postImage.mimetype;
-            await newGadget.save();
-            res.json({ message: 'File uploaded successfully' });
-    
-        } else {
-            const newLifeStyle = new LifeStyle({ item, head, para, date});
-            newLifeStyle.image.data = postImage.buffer; // Use postImage.buffer instead of image.Buffer
-            newLifeStyle.image.contentType = postImage.mimetype;
-            await newLifeStyle.save();
-            res.json({ message: 'File uploaded successfully' });
-        }
+    } catch (error) {
+        res.status(409).json({ message: error.message })
     }
 });
-  
+
+const getNews =  async ( req, res ) => {
+    try {
+        const newsP = await News.find();
+        res.status(200).json(newsP);
+    } catch (error) {
+        res.status(404).json({ message: error.message });
+    }
+}
+
+const getLifestyle = async ( req, res ) => {
+    try {
+        const lifestyleP = await LifeStyle.find();
+        res.status(200).json(lifestyleP);
+    } catch (error) {
+        res.status(404).json({ message: error.message });
+    }
+}
+const getGadgets = async ( req, res ) => {
+    try {
+        const gadgetsP = await Gadget.find();
+        res.status(200).json(gadgetsP);
+    } catch (error) {
+        res.status(404).json({ message: error.message });
+    }
+}
+const getFashion = async ( req, res ) => {
+    try {
+        const fashionP = await Fashion.find();
+        res.status(200).json(fashionP);
+    } catch (error) {
+        res.status(404).json({ message: error.message });
+    }
+}
+
+app.get("/newsP", getNews);
+app.get("/lifestyleP", getLifestyle);
+app.get("/gadgetsP", getGadgets);
+app.get("/fashionP", getFashion);
 
 app.listen(5000, () => {
     console.log("The App has started listen on port 5000")
