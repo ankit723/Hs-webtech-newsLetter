@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux";
-import { setnewsPosts, setComments } from "../../state";
-import Comments from './Comments'
+import { setnewsPosts } from "../../state";
 import Trending from './Trending'
 import { Col, Container, Row } from 'react-bootstrap'
 import Left1 from './Left1'
@@ -15,7 +14,6 @@ import Left4 from './Left4'
 const News = () => {
   const dispatch = useDispatch();
   const newsPosts = useSelector((state) => state.newsPosts);
-  const comments = useSelector((state) => state.comments);
 
   const getNews = async () => {
     const res = await fetch("http://localhost:5000/newsP", {
@@ -25,17 +23,8 @@ const News = () => {
     dispatch( setnewsPosts( { newsPosts: data } ));
   }
 
-  const getComments = async () => {
-    const res = await fetch("http://localhost:5000/comm", {
-      method: "GET"
-    });
-    const data = await res.json();
-    dispatch( setComments( { comments: data } ));
-  }
-
   useEffect(() => {
     getNews();
-    getComments();
   }, []);
 
   return (
@@ -70,7 +59,6 @@ const News = () => {
           </Col>
           <Col className='sticky-top' xs={12} sm={4}>
             <Right type="MOST POPULAR" color="black" textColor="white" data={newsPosts} />
-            <Comments color="black" textColor="white" data={comments} />
             <Social />
           </Col>
         </Row>
