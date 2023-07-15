@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from "react-redux";
+import { setnewsPosts } from "../../state";
 import Comments from './Comments'
 import Trending from './Trending'
 import { Col, Container, Row } from 'react-bootstrap'
@@ -12,8 +14,24 @@ import Left3 from './Left3'
 import Left4 from './Left4'
 
 const News = () => {
+  const dispatch = useDispatch();
+  const newsPosts = useSelector((state) => state.newsPosts);
+
+  const getNews = async () => {
+    const res = await fetch("http://localhost:5000/newsP", {
+      method: "GET"
+    });
+    const data = await res.json();
+    dispatch( setnewsPosts( { newsPosts: data } ));
+  }
+
+  useEffect(() => {
+    getNews();
+  },[])
+
   return (
     <>
+      {console.log(newsPosts)}
       <Trending />
       <Container>
         <Row>
@@ -22,7 +40,6 @@ const News = () => {
             <Left2 type="LIESTYLE NEWS" color="#3a863d" textColor="white" />
           </Col>
           <Col xs={12} sm={4}>
-            <Social />
             <Left4 className='sticky-top' type="MAKE IT MODERN" color="black" textColor="white" titleSize="12px" weight="400" data={news} aspect="1.53" />
           </Col>
         </Row>
@@ -46,6 +63,7 @@ const News = () => {
           <Col className='sticky-top' xs={12} sm={4}>
             <Right type="MOST POPULAR" color="black" textColor="white" />
             <Comments color="black" textColor="white" />
+            <Social />
           </Col>
         </Row>
       </Container>
